@@ -1,0 +1,9 @@
+#!name=彩云天气vip
+#!desc=彩云天气vip
+#!system=ios
+
+[Script]
+彩云天气vip = type=http-response,pattern=https:\/\/biz\.caiyunapp\.com\/v2\/user\?app_name\=weather,requires-body=1,max-size=0,script-path=https://gitee.com/jexxagn/quan-x/raw/master/rewrite/caiyun_svip.js,script-update-interval=-1
+
+[MITM]
+hostname = %APPEND% sapi.beingfine.cn,biz.caiyunapp.com
