@@ -9,9 +9,16 @@ Sub_info_panel1 = script-name=Sub_info_panel1,update-interval=600
 
 [Script]
 # encode地址链接: https://www.urlencoder.org/
-Sub_Info_Panel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info_panel.js,script-update-interval=0,argument=url=https://api.v1.mk/sub?target=surge&ver=4&url= https%3A%2F%2Ffuqing.cz%2Fmodules%2Fservers%2Ffuqingsocks%2Fosubscribe.php%3Fsid%3D1163%26token%3D8GGB0sG5WuOp%26sip002%3D1&title=XIBU&icon=icloud&color=#5AC8FA
+Sub_Info_Panel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info_panel.js,script-update-interval=0,argument=url=https%3A%2F%2Ffuqing.cz%2Fmodules%2Fservers%2Ffuqingsocks%2Fosubscribe.php%3Fsid%3D1163%26token%3D8GGB0sG5WuOp%26sip002%3D1&title=XIBU&icon=icloud&color=#5AC8FA
 
 Sub_info_panel1 = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info_panel.js,script-update-interval=0,argument=url=https%3A%2F%2Fwww.777km.cc%2Flink%2FJ7GtMsIRe3SEtYpP%3Fsub%3D3%26extend%3D1&title=777KM&icon=icloud&color=#5AC8FA
+
+
+
+
+
+
+
 
 
 
