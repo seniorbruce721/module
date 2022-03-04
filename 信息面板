@@ -7,9 +7,6 @@ SurgePro_ ReloadProfile = script-name=缓存开关,update-interval=60
 #网络信息面板
 NetInfoPanel=title="",content="",style=info,script-name=net-info-panel.js,update-interval=1
 
-#节点检测 
-ipcheck = script-name=ipcheck, title="节点信息", content="请刷新", style=info, update-interval=1
-
 #流媒体解锁检测 
 stream-checktool = script-name=stream-check, title="流媒体解锁检测", content="请刷新面板", update-interval=-1
 
@@ -22,9 +19,6 @@ stream-checktool = script-name=stream-check, title="流媒体解锁检测", cont
 
 #网络信息面板
 net-info-panel.js=script-path=https://raw.githubusercontent.com/Nebulosa-Cat/Surge/main/Panel/Network-Info/networkCheck.js,type=generic
-
-#节点检测
-ipcheck = type=generic, timeout=3, script-path= https://raw.githubusercontent.com/iEwha/Profiles/master/Surge/Scripts/ipcheck.js
 
 #流媒体解锁检测
 stream-check= type=generic, timeout=15, script-path=https://raw.githubusercontent.com/iEwha/Profiles/master/Surge/Scripts/stream-check.js
