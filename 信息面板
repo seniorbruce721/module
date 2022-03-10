@@ -2,8 +2,6 @@
 #!desc=信息面板
 
 [Panel]
-#Surge Pro标题,可显示启动时间,点击刷新为重载配置
-SurgePro_ ReloadProfile = script-name=缓存开关,update-interval=60
 #网络信息面板
 NetInfoPanel=title="",content="",style=info,script-name=net-info-panel.js,update-interval=1
 
@@ -14,9 +12,6 @@ stream-checktool = script-name=stream-check, title="流媒体解锁检测", cont
 节假日提醒 = script-name=节假日提醒,update-interval=3600
 
 [Script]
-#Surge Pro标题,可显示启动时间,点击刷新为重载配置
-缓存开关 = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/iEwha/Profiles/master/Surge/Scripts/surgepro_flushdns.js,argument=icon=power.circle&color=#FF7500&title=Surge Pro
-
 #网络信息面板
 net-info-panel.js=script-path=https://raw.githubusercontent.com/Nebulosa-Cat/Surge/main/Panel/Network-Info/networkCheck.js,type=generic
 
