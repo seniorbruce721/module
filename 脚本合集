@@ -1,0 +1,76 @@
+#!name=脚本合集
+#!desc=最后更新时间 2022-03-13 16:27
+#!system=ios
+
+# 分割线——————————————————————————
+
+[Rule]
+# > (内置模块)阻止所有UDP流量到端口443，使HTTP3请求退回到TCP流量
+AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP
+# > 京东 去广告
+URL-REGEX,^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$,REJECT-TINYGIF
+# > 交管12123 去广告
+URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
+
+# 分割线——————————————————————————
+
+[URL Rewrite]
+# > TikTok换区
+(更换307前面JP JP=日本 KR=韩国 HK=香港 US=美国）
+(?<=&mcc_mnc=)4 2 307
+(?<=_region=)CN(?=&) JP 307
+(^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
+^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
+
+# 分割线——————————————————————————
+
+[Panel]
+//策略面板 = script-name=电信详情,update-interval=3600
+
+# 分割线——————————————————————————
+
+[Script]
+# > 奈飞评分
+奈飞评分 = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
+奈飞评分 = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
+单集评分 = type=http-response,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/warmer/.+type=show-ath,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating_season.js
+# > 新浪微博 去广告
+微博广告 = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua)
+微博广告 = type=http-response,requires-body=1,max-size=-1,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list),script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
+# > 彩云天气_SVIP
+彩云天气 = type=http-response,requires-body=1,max-size=0,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),script-path=https://raw.githubusercontent.com/githubdulong/Script/master/cytq.js
+# > 京东App 历史价格 
+京东比价 = type=http-response,requires-body=1,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jd_price.js
+# > 百度云盘 解锁
+百度云盘 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Crack/bdcloud.js,script-update-interval=0
+# > 百度跳转
+百度跳转 = type=http-response,pattern=^https:\/\/boxer\.baidu\.com\/scheme\?scheme,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
+# > 空气质量
+空气质量 = type=http-response,pattern=https://weather-data.apple.com/v2/weather/[\w-]+/-?[0-9]+\.[0-9]+/-?[0-9]+\.[0-9]+\?,requires-body=true,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/iOS15_Weather_AQI_US.js
+# > 订阅管理
+订阅管理 = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js,requires-body=true,timeout=120,max-size=131072
+# > 私有仓库
+私有仓库 = type=http-request,requires-body=0,pattern=^https?:\/\/(raw|gist)\.githubusercontent.com,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GithubPrivate/github-private-repo.js
+# > phothop 解锁
+修图神器 = type=http-response,pattern=^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Quantumult-X-LK/master/Scripts/langkhach/photoshop.js,script-update-interval=0
+# > lightroom 解锁
+修图解锁 = type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Quantumult-X-LK/master/Scripts/langkhach/lightroom.js,script-update-interval=0
+# > 策略面板
+//电信详情 = type=http-request,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/telecom.js,pattern=https://e.189.cn/store/user/package_detail.do,requires-body=1,max-size=0,timeout=10
+# > 模块订阅(单独添加)
+//爬虫复写去广告 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/Advertising/Advertising.sgmodule
+//什么值得买去广告 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.sgmodule
+//贴吧去除广告 https://raw.githubusercontent.com/app2smile/rules/master/module/tieba.sgmodule
+//spotify解锁 https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module
+//Siri区域解锁 https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Siri_Suggestions.sgmodule
+//京东助手(注入式需key）https://raw.githubusercontent.com/githubdulong/Script/master/jdHelper.sgmodule
+//京东联盟转链（联盟、助手二选一）https://raw.githubusercontent.com/githubdulong/Script/master/Surge/jdapp_to_union.sgmodule
+//浏览器搜索 https://raw.githubusercontent.com/githubdulong/Script/master/Surge/Q-Search_All_in_one.sgmodule
+//京东半自动销卡 https://raw.githubusercontent.com/githubdulong/Script/master/Jd_unbindCard.sgmodule
+//TF下载修正 https://raw.githubusercontent.com/githubdulong/Script/master/Surge/TestFlightDownload.sgmodule
+//字幕翻译 https://raw.githubusercontent.com/Neurogram-R/Surge/master/module/Dualsub.sgmodule 指令https://www.icloud.com/shortcuts/136b52e6452b4a10b3ea647f925cddd0
+//模块更新捷径 https://www.icloud.com/shortcuts/67c3ace4fb3a4f9ebbe8d3184cd82e39
+# 分割线——————————————————————————
+
+[MITM]
+hostname = %INSERT% ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, biz.caiyunapp.com, raw.githubusercontent.com, api-production.endel.io, pan.baidu.com, btrace.qq.com, security.wechat.com, boxer.baidu.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, weather-data.apple.com, raw.githubusercontent.com, gist.githubusercontent.com, sub.store, lcs-mobile-cops.adobe.io, api.m.jd.com, photos.adobe.io, gab.122.gov.cn
