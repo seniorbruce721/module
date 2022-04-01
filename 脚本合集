@@ -28,6 +28,9 @@ URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$,REJECT
 策略面板 = script-name=缓存开关,update-interval=60
 策略面板 = script-name=奈飞查询,update-interval=43200
 策略面板 = script-name=代理选择,update-interval=-1
+NetInfoPanel=title="",content="",style=info,script-name=net-info-panel.js,update-interval=1
+节假日提醒 = script-name=节假日提醒,update-interval=3600
+flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interval=600
 
 # 分割线——————————————————————————
 
