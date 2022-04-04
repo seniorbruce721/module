@@ -60,8 +60,6 @@ flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interva
 修图神器 = type=http-response,pattern=^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Quantumult-X-LK/master/Scripts/langkhach/photoshop.js,script-update-interval=0
 # > lightroom 解锁
 修图解锁 = type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Quantumult-X-LK/master/Scripts/langkhach/lightroom.js,script-update-interval=0
-# > MIX解锁
-滤镜解锁 = requires-body=1,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/mix.js,type=http-response,pattern= ^https:\/\/bmall\.camera360\.com\/api\/mix\/recovery$
 # > 机场信息 
 机场信息 = type=http-request,pattern=http://sub\.info,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info.js
 # > 策略面板
