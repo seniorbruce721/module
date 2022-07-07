@@ -74,4 +74,4 @@ flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/
 # 分割线——————————————————————————
 
 [MITM]
-hostname = %INSERT% ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, biz.caiyunapp.com, raw.githubusercontent.com, api-production.endel.io, pan.baidu.com, btrace.qq.com, security.wechat.com, boxer.baidu.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, weather-data.apple.com, raw.githubusercontent.com, gist.githubusercontent.com, sub.store, lcs-mobile-cops.adobe.io, api.m.jd.com, photos.adobe.io, gab.122.gov.cn
+hostname = %INSERT% ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, biz.caiyunapp.com, raw.githubusercontent.com, api-production.endel.io, pan.baidu.com, btrace.qq.com, security.wechat.com, boxer.baidu.com, weather-data.apple.com, raw.githubusercontent.com, gist.githubusercontent.com, sub.store, lcs-mobile-cops.adobe.io, api.m.jd.com, photos.adobe.io, gab.122.gov.cn
