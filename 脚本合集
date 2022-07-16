@@ -53,10 +53,6 @@ flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interva
 百度跳转 = type=http-response,pattern=^https:\/\/boxer\.baidu\.com\/scheme\?scheme,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
 # > 空气质量
 空气质量 = type=http-response, pattern=^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather.*(?!dataSets=forecastNextHour)(include=.*air_quality.*|dataSets=.*airQuality.*).*(country=[A-Z]{2})?.*, requires-body=1, timeout=15, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Apple_Weather.js
-# > 订阅管理
-订阅管理 = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js,requires-body=true,timeout=120,max-size=131072
-# > 私有仓库
-私有仓库 = type=http-request,requires-body=0,pattern=^https?:\/\/(raw|gist)\.githubusercontent.com,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GithubPrivate/github-private-repo.js
 # > phothop 解锁
 修图神器 = type=http-response,pattern=^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Quantumult-X-LK/master/Scripts/langkhach/photoshop.js,script-update-interval=0
 # > lightroom 解锁
