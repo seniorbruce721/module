@@ -40,7 +40,7 @@ flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interva
 
 [Script]
 # > SUB 订阅同步
-//订阅同步 = type=cron,cronexp=15 0 0 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/dist/cron-sync-artifacts.min.js,script-update-interval=0
+订阅同步 = type=cron,cronexp="15 0 8,20 * * *",script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/dist/cron-sync-artifacts.min.js,script-update-interval=0,wake-system=1
 # > 奈飞评分
 奈飞评分 = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
 奈飞评分 = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
