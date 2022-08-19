@@ -29,6 +29,8 @@ URL-REGEX,^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad\/,REJECT-TINYGIF
 # 分割线——————————————————————————
 
 [Panel]
+#开心一点
+reload = title=不开心就刷新一下我的我！,content=宝～ 今天也要开开心心的喔！,style=info,script-name=reload,update-interval=-1
 策略面板 = script-name=缓存开关,update-interval=60
 策略面板 = script-name=奈飞查询,update-interval=21600
 策略面板 = script-name=代理选择,update-interval=300
@@ -58,8 +60,6 @@ flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interva
 #开心一点
 reload=script-path=https://raw.githubusercontent.com/Onlookers-Group/Texonin-LAB-Public/main/Surge/js/js_baby/zReload.js,type=generic
 # > 策略面板
-#开心一点
-reload = title=不开心就刷新一下我的我！,content=宝～ 今天也要开开心心的喔！,style=info,script-name=reload,update-interval=-1
 缓存开关 = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/surgepro_flushdns.js,argument=icon=power.circle&color=#FF2121&title=𝗦𝗨𝗥𝗚𝗘 ®｜2022-12-22
 奈飞查询 = type=generic,timeout=30,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/nf_check.js, argument=title=𝗡𝗘𝗧𝗙𝗟𝗜𝗫
 代理选择 = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/fishingworld/something/main/groupPanel.js,argument=icon=bolt.circle&color=#157EFB&group=𝗣𝗥𝗢𝗫𝗬
