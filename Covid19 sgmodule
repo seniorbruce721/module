@@ -9,4 +9,4 @@
 
 # 重载配置
 # 新冠疫情查询
-##covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
+##covid19 = type=generic, script-path=https://raw.githubusercontent.com/seniorbruce721/module/main/Covid19.js
