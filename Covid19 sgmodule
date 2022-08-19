@@ -1,0 +1,12 @@
+#!name=Surge zhao
+#!desc=Surge自用 #新冠疫情查询
+#!system=ios
+
+[Panel]
+##covid19 = script-name=covid19, title=新冠疫情查询, content=请刷新, update-interval=60
+
+[Script]
+
+# 重载配置
+# 新冠疫情查询
+##covid19 = type=generic, script-path=https://raw.githubusercontent.com/Patickhuang/surge/main/Covid19.js
