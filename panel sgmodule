@@ -9,5 +9,5 @@ stream-all = script-name=stream-all, title="流媒体解锁检测", content="请
 
 [Script]
 stream-all = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Panel/Stream-All/Stream-All.js
-备用机场 = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/sub_info_panel.js,script-update-interval=0,argument=url=https%3A%2F%2Fapi.nxtlnodes.com%2FSubscription%2FSurgeNodeList%3Fsid%3D24406%26token%3D9d7rxXckmxj&reset_day=20&title=Amy&icon=star.circle&color=#00BC12
+备用机场 = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/sub_info_panel.js,script-update-interval=0,argument=ur=lhttps%3A%2F%2Fednovas.tech%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dd166f40c0cd9e64876c013b0d34f7054&reset_day=0&title=Ed&icon=star.circle&color=#00BC12
 主力机场 = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/sub_info_panel.js,script-update-interval=0,argument=url=http%3A%2F%2Fv1.vmess.top%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D87bd9ea96bdabe5619db2e443f78a420&reset_day=0&title=paopao&icon=airplane.circle&color=#157EFB
