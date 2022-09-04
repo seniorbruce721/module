@@ -1,0 +1,8 @@
+#!name=AdGuard Rule
+#!desc=Surge 能直接使用的 AdGuard 维护的域名规则
+
+[Rule]
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/dns-filter.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/neohosts.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/neohosts-full.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/adaway.txt,REJECT
