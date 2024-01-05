@@ -5,8 +5,6 @@
 # 分割线——————————————————————————
 
 [Rule]
-# > 策略优选
-AND,((DOMAIN,iosapps.itunes.apple.com), (SCRIPT,策略优选)),Apple
 # > 威锋 去广告
 URL-REGEX,^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList),REJECT
 
@@ -24,12 +22,14 @@ flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interva
 # 分割线——————————————————————————
 
 [Script]
-# 京东比价 Lite(通知版)
+# 𝐍𝐞𝐭𝐟𝐥𝐢𝐱 𝐑𝐚𝐭𝐞𝐬
+𝐍𝐞𝐭𝐟𝐥𝐢𝐱 𝐑𝐚𝐭𝐞𝐬 = script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,type=http-request,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,requires-body=0,script-update-interval=0
+𝐍𝐞𝐭𝐟𝐥𝐢𝐱 𝐑𝐚𝐭𝐞𝐬 = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,type=http-response,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,max-size=0,script-update-interval=0
+# 𝐑𝐞𝐦𝐨𝐯𝐞 𝐖𝐞𝐂𝐡𝐚𝐭 𝐋𝐢𝐧𝐤 𝐑𝐞𝐬𝐭𝐫𝐢𝐜𝐭𝐢𝐨𝐧
+𝐑𝐞𝐦𝐨𝐯𝐞 𝐖𝐞𝐂𝐡𝐚𝐭 𝐋𝐢𝐧𝐤 𝐑𝐞𝐬𝐭𝐫𝐢𝐜𝐭𝐢𝐨𝐧 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Anchen520i/Dynamic/Surge/UnblockURLinWeChat.js# 京东比价 Lite(通知版)
 http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) requires-body=true, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jd_price_lite.js, tag=京东比价 Lite(通知版)
 # > 百度跳转
 百度跳转 = type=http-response,pattern=^https:\/\/boxer\.baidu\.com\/scheme\?scheme,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
-# > 百度云盘 解锁
-百度云盘 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/m
 #开心一点
 reload=script-path=https://raw.githubusercontent.com/Onlookers-Group/Texonin-LAB-Public/main/Surge/js/js_baby/zReload.js,type=generic
 # > 策略面板
@@ -44,4 +44,4 @@ flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/
 # 分割线——————————————————————————
 
 [MITM]
-hostname = %INSERT% api.m.jd.com,pan.baidu.com,api.wfdata.club,
+hostname = %INSERT% api.m.jd.com,pan.baidu.com,api.wfdata.club,weixin110.qq.com,ios.prod.ftl.netflix.com
