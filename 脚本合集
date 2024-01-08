@@ -22,15 +22,9 @@ flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interva
 # 分割线——————————————————————————
 
 [Script]
-高德打车获取cookie = type=http-
-response, pattern=^https: \/\/m5-zb\.amap\.com\/ws\/yuece\/act\/
-query\?, requires-body=true, max-size=3145728, script-path=https:// raw.githubusercontent.com/wf021325/qx/
-master/task/ampDache.js, timeout=60, script-update-interval=0
-高德打车签到 = type=cron,cronexp=19 9*
-*, script-path=https://
-raw.githubusercontent.com/wf021325/qx/
-master/task/ampDache.js, timeout=60, wake-system=1
-# 𝐍𝐞𝐭𝐟𝐥𝐢𝐱 𝐑𝐚𝐭𝐞𝐬
+# >高德打车签到
+高德打车 = type=cron,cronexp=19 9 * * *,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js,timeout=60,wake-system=1,script-update-interval=0
+# 高德打车获取Cookie = type=http-response,pattern=^https:\/\/m5(-zb)?\.amap\.com\/ws\/yuece\/(act|openapi)\/(activity\/current\/)?query,requires-body=1,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js# 𝐍𝐞𝐭𝐟𝐥𝐢𝐱 𝐑𝐚𝐭𝐞𝐬
 𝐍𝐞𝐭𝐟𝐥𝐢𝐱 𝐑𝐚𝐭𝐞𝐬 = script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,type=http-request,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,requires-body=0,script-update-interval=0
 𝐍𝐞𝐭𝐟𝐥𝐢𝐱 𝐑𝐚𝐭𝐞𝐬 = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,type=http-response,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,max-size=0,script-update-interval=0
 # 𝐑𝐞𝐦𝐨𝐯𝐞 𝐖𝐞𝐂𝐡𝐚𝐭 𝐋𝐢𝐧𝐤 𝐑𝐞𝐬𝐭𝐫𝐢𝐜𝐭𝐢𝐨𝐧
