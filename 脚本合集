@@ -9,16 +9,7 @@
 URL-REGEX,^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/(infoCenterAd|yesList),REJECT
 
 [Panel]
-# > 服务状态
-服务状态 = title="服务状态",content="请刷新",style=info,update-interval=360,script-name=服务状态
-#开心一点
-reload = title=不开心就刷新一下我的我！,content=宝～ 今天也要开开心心的喔！,style=info,script-name=reload,update-interval=-1
-策略面板 = script-name=缓存开关,update-interval=60
-节假日提醒 = script-name=节假日提醒,update-interval=3600
-flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interval=600
-# > 网络状态
-网络状态 = title="网络状态",content="请刷新",style=info,update-interval=360,script-name=网络状态
-
+YJ = script-name=YJ,update-interval=43200
 # 分割线——————————————————————————
 
 [Script]
@@ -27,20 +18,8 @@ flushDNS = script-name=flushDNS,title=Flush DNS,content=请刷新,update-interva
 # 𝐑𝐞𝐦𝐨𝐯𝐞 𝐖𝐞𝐂𝐡𝐚𝐭 𝐋𝐢𝐧𝐤 𝐑𝐞𝐬𝐭𝐫𝐢𝐜𝐭𝐢𝐨𝐧
 𝐑𝐞𝐦𝐨𝐯𝐞 𝐖𝐞𝐂𝐡𝐚𝐭 𝐋𝐢𝐧𝐤 𝐑𝐞𝐬𝐭𝐫𝐢𝐜𝐭𝐢𝐨𝐧 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Anchen520i/Dynamic/Surge/UnblockURLinWeChat.js# 京东比价 Lite(通知版)
 http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) requires-body=true, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jd_price_lite.js, tag=京东比价 Lite(通知版)
-# > 百度跳转
-百度跳转 = type=http-response,pattern=^https:\/\/boxer\.baidu\.com\/scheme\?scheme,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/baidu-no-redirect.js
-#开心一点
-reload=script-path=https://raw.githubusercontent.com/Onlookers-Group/Texonin-LAB-Public/main/Surge/js/js_baby/zReload.js,type=generic
-# > 策略面板
-缓存开关 = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/surgepro_flushdns.js,argument=icon=power.circle&color=#FF2121&title=𝗦𝗨𝗥𝗚𝗘 ®｜2022-12-22
-节假日提醒 = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/iEwha/Profiles/master/Surge/Scripts/timecard.js
-flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/flushDNS.js,argument=title=DNS FLush&icon=arrow.clockwise&color=#3d3d5b
-# > 网络信息
-网络状态 = type=generic, script-path=https://hub.nange.cn/Script/Tools/NetInfo.js
-# > 服务状态
-服务状态 = type=generic, script-path=https://hub.nange.cn/Script/Tools/APIStatus.js
-
+YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/script/youjia.js,argument=shanghai
 # 分割线——————————————————————————
 
 [MITM]
-hostname = %INSERT% api.m.jd.com,pan.baidu.com,api.wfdata.club,weixin110.qq.com,security.wechat.com,ios.prod.ftl.netflix.com
+hostname = %INSERT% api.m.jd.com,api.wfdata.club,weixin110.qq.com,security.wechat.com,ios.prod.ftl.netflix.com
