@@ -13,7 +13,6 @@ YJ = script-name=YJ,update-interval=43200
 # 分割线——————————————————————————
 节点信息 = script-name=节点信息,update-interval=-1
 
-规则统计 = script-name=规则统计,update-interval=-1
 [Script]
 𝐍𝐞𝐭𝐟𝐥𝐢𝐱 𝐑𝐚𝐭𝐞𝐬 = script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,type=http-request,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,requires-body=0,script-update-interval=0
 𝐍𝐞𝐭𝐟𝐥𝐢𝐱 𝐑𝐚𝐭𝐞𝐬 = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js,type=http-response,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,max-size=0,script-update-interval=0
@@ -21,8 +20,6 @@ YJ = script-name=YJ,update-interval=43200
 𝐑𝐞𝐦𝐨𝐯𝐞 𝐖𝐞𝐂𝐡𝐚𝐭 𝐋𝐢𝐧𝐤 𝐑𝐞𝐬𝐭𝐫𝐢𝐜𝐭𝐢𝐨𝐧 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Anchen520i/Dynamic/Surge/UnblockURLinWeChat.js# 京东比价 Lite(通知版)
 http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) requires-body=true, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jd_price_lite.js, tag=京东比价 Lite(通知版)
 YJ = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/script/youjia.js,argument=shanghai
-规则统计 = type=generic,timeout=30,argument=list=1&type=1&LogTF=0&icolor=#5AC8FA&title=规则详情 |&icon=list.bullet.rectangle&push=1,script-update-interval=-1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/st/js/index.js
-
 节点信息 = type=generic,timeout=8,script-path=https://raw.githubusercontent.com/Keywos/rule/master/script/netisp/js/surge.js, script-update-interval=-1,argument=icolor=#5AC8FA&icon=list.bullet.rectangle&GPT=0&hideIP=1&cnTimeout=1000&usTimeout=3000
 # 分割线——————————————————————————
 
